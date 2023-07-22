@@ -188,8 +188,7 @@ router.post('/forgot', async (req, res) => {
 
         try {
             //Adding the userdetails to the temporary model of the database(Data will be transferred into main model later on)
-            const isOtp = await UserOtp.findOne({email: email})
-            console.log(isOtp);
+            const isOtp = await Forgot.findOne({email: email})
             if(isOtp){
                 await UserOtp.findByIdAndDelete(isOtp._id)
             }

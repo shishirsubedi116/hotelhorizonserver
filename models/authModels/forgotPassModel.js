@@ -16,7 +16,7 @@ const forgotSchema = new mongoose.Schema({
     },
 
     otp: {
-        type: String,
+        type: Number,
         required: true
     },
 })
