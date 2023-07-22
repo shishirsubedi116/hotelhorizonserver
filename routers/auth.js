@@ -191,7 +191,7 @@ router.post('/forgot', async (req, res) => {
             const isOtp = await Forgot.findOne({email: email})
             console.log(isOtp);
             if(isOtp){
-                await UserOtp.findByIdAndDelete(isOtp._id)
+                await Forgot.findByIdAndDelete(isOtp._id)
             }
             const newOtpUser = await new Forgot({ email, otp: OTP });
             await newOtpUser.save();
