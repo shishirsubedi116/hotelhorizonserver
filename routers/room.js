@@ -9,7 +9,7 @@ const verifyUser = require('../middleware/verifyUser')
 //Multer Setup
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'public/rooms');
+        cb(null, 'public/');
     },
     filename: function (req, file, cb) {
         cb(null, Date.now() + '_' + file.originalname);
