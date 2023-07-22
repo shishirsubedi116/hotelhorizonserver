@@ -64,7 +64,7 @@ router.post('/bookroom', verifyUser, async (req, res) => {
                     from: 'threatyour@gmail.com',
                     to: `${email}`,
                     subject: 'Your OTP',
-                    text: `Dear ${user.name}, You have booked room ${roomNo} in our hotel from ${fromDate} to ${toDate}. 
+                    text: `Dear ${user.name}, You have booked room ${roomNo} in our hotel from ${from} to ${to}. 
                         Thank You for using our service. You should pay the price when you come to hotel. You can cancel the booking under 2 hours if you want. If you exceed two hours then you need to call the hotel. You should come to hotel under 24 hours.
                         
                         From Hotel Horizon
