@@ -23,6 +23,10 @@ app.use('/api/room', require('./routers/room'));
 app.use('/api/booking', require('./routers/book'));
 app.use('/api/admin', require('./routers/admin'));
 
+app.get('/', (req,res)=>{
+    res.send('Hotel Horizon Server Started')
+})
+
 //Listening to the server
 app.listen(port, () => {
     console.log('Server running...');
