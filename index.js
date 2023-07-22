@@ -24,7 +24,7 @@ app.use('/api/booking', require('./routers/book'));
 app.use('/api/admin', require('./routers/admin'));
 
 app.get('/', (req,res)=>{
-    res.send('Hotel Horizon Server Started')
+  return  res.send('Hotel Horizon Server Started')
 })
 
 //Listening to the server
