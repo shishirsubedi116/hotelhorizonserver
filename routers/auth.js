@@ -180,7 +180,7 @@ router.post('/forgot', async (req, res) => {
             from: 'threatyour@gmail.com',
             to: `${email}`,
             subject: 'Your OTP',
-            text: `${OTP} is Your Otp for recovering your account in DiamondEats
+            text: `${OTP} is Your Otp for recovering your account in Hotel Horizon
         
                         If any error occured, please try again. Please verify under 1 minute
                         `
@@ -192,7 +192,7 @@ router.post('/forgot', async (req, res) => {
             if(isOtp){
                 await UserOtp.findByIdAndDelete(isOtp._id)
             }
-            const newOtpUser = new Forgot({ email, otp: OTP });
+            const newOtpUser = await new Forgot({ email, otp: OTP });
             await newOtpUser.save();
             return res.status(200).json({ success: true, message: "OTP SENT please verify" });
 
